@@ -37,7 +37,7 @@ class CacheClearCommand extends Command
     /**
      * {@inheritdoc}
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $cacheDir = $this->container->getParameter('rulerz.cache_directory');
         $filesystem = $this->container->get('filesystem');
@@ -50,5 +50,7 @@ class CacheClearCommand extends Command
             $filesystem->remove($cacheDir);
             $filesystem->mkdir($cacheDir);
         }
+
+        return 0;
     }
 }
