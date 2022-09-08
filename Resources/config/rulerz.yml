@@ -1,4 +1,5 @@
 services:
+    Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
     rulerz:
         class: RulerZ\RulerZ
         arguments: [ "@rulerz.compiler" ]
@@ -24,6 +25,7 @@ services:
     rulerz.command.cache_clear:
         class: KPhoen\RulerZBundle\Command\CacheClearCommand
         public: true
-        autowire: true
+        arguments:
+            - '@service_container'
         tags:
             - {name: console.command }
