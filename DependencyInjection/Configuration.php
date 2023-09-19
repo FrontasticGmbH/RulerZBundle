@@ -17,10 +17,10 @@ class Configuration implements ConfigurationInterface
         $this->debug = $debug;
     }
 
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('rulerz');
+        $treeBuilder = new TreeBuilder('rulerz');
+        $rootNode = $treeBuilder->getRootNode();
 
         $this->addCacheConfig($rootNode);
         $this->addDebugConfig($rootNode);
