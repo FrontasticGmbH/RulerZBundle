@@ -1,5 +1,5 @@
 {
-    "name": "kphoen/rulerz-bundle",
+    "name": "frontastic/rulerz-bundle",
     "type": "symfony-bundle",
     "license": "MIT",
     "homepage": "https://github.com/K-Phoen/RulerZBundle",
@@ -16,16 +16,6 @@
             "email": "contact@kevingomez.fr"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/FrontasticGmbH/rulerz.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/FrontasticGmbH/rulerz-bridge.git"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "KPhoen\\RulerZBundle\\": ""
@@ -36,8 +26,8 @@
     },
     "require": {
         "php": ">=7.1",
-        "kphoen/rulerz": "dev-feat\/symfony-5-compat|^1.0",
-        "kphoen/rulerz-bridge": "dev-feat\/symfony-5-compat|^1.0",
+        "frontastic/rulerz": "^0.22.0",
+        "frontastic/rulerz-bridge": "^1.2.0",
         "symfony/framework-bundle": "^3.0|^4.0|^5.0|^6.0"
     },
     "require-dev": {
@@ -46,5 +36,8 @@
         "mikey179/vfsstream": "^1.6",
         "matthiasnoback/symfony-dependency-injection-test": "^4.0",
         "liip/rmt": "^1.2"
+    },
+    "replace": {
+        "kphoen/rulerz-bundle": "*"
     }
 }
